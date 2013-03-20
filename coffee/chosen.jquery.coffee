@@ -330,7 +330,9 @@ class Chosen extends AbstractChosen
 
       link.parents('li').first().remove()
 
-      this.search_field_scale()
+      @form_field_jq.trigger("liszt:removed_choice", {chosen: this})
+	  
+	  this.search_field_scale()
 
   results_reset: ->
     @form_field.options[0].selected = true

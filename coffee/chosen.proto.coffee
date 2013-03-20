@@ -308,7 +308,9 @@ class Chosen extends AbstractChosen
 
       link.up('li').remove()
 
-      this.search_field_scale()
+      @form_field.fire("liszt:ready", {chosen: this})
+
+	  this.search_field_scale()
 
   results_reset: ->
     @form_field.options[0].selected = true
